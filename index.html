@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire Grefus</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a1a;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 30px 20px;
+      min-height: 100vh;
+    }
+
+    .conteneur {
+      background: #1a1a2e;
+      border: 2px solid gold;
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      color: gold;
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .champ {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      color: #aaaaff;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 12px 15px;
+      background: #0a0a1a;
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 10px;
+      color: white;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    select:focus {
+      border-color: gold;
+    }
+
+    select option {
+      background: #1a1a2e;
+    }
+
+    .radio-groupe {
+      display: flex;
+      gap: 20px;
+      margin-top: 6px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      accent-color: gold;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, gold, #FF8C00);
+      color: black;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: opacity 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.85;
+    }
+
+    .erreur {
+      color: #ff6b6b;
+      font-size: 12px;
+      margin-top: 4px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="conteneur">
+
+    <h2>Formulaire d'inscription</h2>
+
+    <form id="monFormulaire" onsubmit="valider(event)">
+
+      <!-- NOM -->
+      <div class="champ">
+        <label for="nom">Nom *</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          placeholder="Entrez votre nom"
+          required
+        />
+      </div>
+
+      <!-- PRÉNOM -->
+      <div class="champ">
+        <label for="prenom">Prénom *</label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          placeholder="Entrez votre prénom"
+          required
+        />
+      </div>
+
+      <!-- EMAIL -->
+      <div class="champ">
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="exemple@email.com"
+          required
+        />
+      </div>
+
+      <!-- DATE DE NAISSANCE -->
+      <div class="champ">
+        <label for="naissance">Date de naissance *</label>
+        <input
+          type="date"
+          id="naissance"
+          name="naissance"
+          required
+        />
+      </div>
+
+      <!-- PAYS -->
+      <div class="champ">
+        <label for="pays">Choisissez votre pays *</label>
+        <select id="pays" name="pays" required>
+          <option value="">-- Sélectionner --</option>
+          <option value="cameroun" selected>Cameroun</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="tchad">Tchad</option>
+          <option value="togo">Togo</option>
+          <option value="ethiopie">Ethiopie</option>
+          <option value="cote_ivoire">Côte d'Ivoire</option>
+          <option value="senegal">Sénégal</option>
+        </select>
+      </div>
+
+      <!-- SEXE -->
+      <div class="champ">
+        <label>Sexe *</label>
+        <div class="radio-groupe">
+          <div class="radio-option">
+            <input
+              type="radio"
+              id="masculin"
+              name="sexe"
+              value="masculin"
+            />
+            <label for="masculin">Masculin</label>
+          </div>
+          <div class="radio-option">
+            <input
+              type="radio"
+              id="feminin"
+              name="sexe"
+              value="feminin"
+            />
+            <label for="feminin">Féminin</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOUTON -->
+      <button type="submit">Valider l'inscription</button>
+
+    </form>
+
+  </div>
+
+  <script>
+    function valider(event) {
+      event.preventDefault();
+
+      var nom = document.getElementById("nom").value;
+      var prenom = document.getElementById("prenom").value;
+      var email = document.getElementById("email").value;
+      var naissance = document.getElementById("naissance").value;
+      var pays = document.getElementById("pays").value;
+      var sexe = document.querySelector('input[name="sexe"]:checked');
+
+      if (!sexe) {
+        alert("Veuillez choisir votre sexe !");
+        return;
+      }
+
+      alert(
+        "Inscription réussie !\n\n" +
+        "Nom : " + nom + "\n" +
+        "Prénom : " + prenom + "\n" +
+        "Email : " + email + "\n" +
+        "Pays : " + pays + "\n" +
+        "Sexe : " + sexe.value
+      );
+    }
+  </script>
+
+</body>
+</html>
