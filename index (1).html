@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Grefus — Cuisine Africaine</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      font-family: Georgia, serif;
+    }
+
+    nav {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid gold;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 0 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      background-color: #111;
+      text-align: center;
+      padding: 80px 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .hero h1 {
+      color: gold;
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .hero .ligne {
+      color: gold;
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-titre {
+      color: gold;
+      font-size: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .separateur {
+      text-align: center;
+      color: gold;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    tr {
+      border-bottom: 1px solid #333;
+    }
+
+    tr:hover {
+      background-color: #1a1a1a;
+    }
+
+    .plat-nom {
+      color: white;
+      font-size: 17px;
+      padding: 18px 10px;
+      text-align: left;
+    }
+
+    .plat-desc {
+      color: #888;
+      font-size: 13px;
+      font-style: italic;
+      padding: 0 10px 18px;
+      text-align: left;
+    }
+
+    .plat-prix {
+      color: gold;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 18px 10px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .badge {
+      background-color: gold;
+      color: black;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 2px 8px;
+      text-transform: uppercase;
+      margin-left: 8px;
+    }
+
+    .reservation {
+      background-color: #111;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+
+    .reservation h2 {
+      color: gold;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+    }
+
+    .reservation input,
+    .reservation select {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 16px;
+      padding: 14px;
+      background-color: #1a1a1a;
+      border: 1px solid #444;
+      color: white;
+      font-size: 15px;
+      font-family: Georgia;
+    }
+
+    .reservation input:focus,
+    .reservation select:focus {
+      border-color: gold;
+      outline: none;
+    }
+
+    .btn-reserver {
+      background-color: gold;
+      color: black;
+      border: none;
+      padding: 16px 50px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: Georgia;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #222;
+    }
+
+    footer span {
+      color: gold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Réservation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p style="color:#888;font-size:14px;letter-spacing:3px;text-transform:uppercase">
+      Cuisine Africaine Raffinée
+    </p>
+    <div class="ligne">— ✦ —</div>
+    <h1>Restaurant Grefus</h1>
+    <div class="ligne">— ✦ —</div>
+    <p>Ouvert du Lundi au Dimanche · 12h00 - 23h00</p>
+  </div>
+
+  <!-- MENU ENTRÉES -->
+  <div class="section" id="menu">
+    <div class="section-titre">Entrées</div>
+    <div class="separateur">— ✦ —</div>
+    <table>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Salade Africaine
+            <span class="badge">Populaire</span>
+          </div>
+          <div class="plat-desc">
+            Légumes frais, avocat, tomates et vinaigrette citronnée
+          </div>
+        </td>
+        <td class="plat-prix">1 500 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Soupe de Gombo</div>
+          <div class="plat-desc">
+            Soupe traditionnelle aux légumes et épices locales
+          </div>
+        </td>
+        <td class="plat-prix">2 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Beignets de Crevettes</div>
+          <div class="plat-desc">
+            Crevettes fraîches marinées et frites à la perfection
+          </div>
+        </td>
+        <td class="plat-prix">2 500 FCFA</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MENU PLATS PRINCIPAUX -->
+  <div class="section">
+    <div class="section-titre">Plats Principaux</div>
+    <div class="separateur">— ✦ —</div>
+    <table>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Ndolé Royal
+            <span class="badge">Signature</span>
+          </div>
+          <div class="plat-desc">
+            Ndolé aux crevettes et viande de bœuf, servi avec du plantain
+          </div>
+        </td>
+        <td class="plat-prix">5 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Poulet DG</div>
+          <div class="plat-desc">
+            Poulet braisé aux légumes et plantain mûr sauté
+          </div>
+        </td>
+        <td class="plat-prix">6 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Eru Spécial
+            <span class="badge">Populaire</span>
+          </div>
+          <div class="plat-desc">
+            Eru traditionnel accompagné de water fufu et viande fumée
+          </div>
+        </td>
+        <td class="plat-prix">4 500 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Poisson Braisé</div>
+          <div class="plat-desc">
+            Poisson frais grillé aux épices camerounaises avec miondo
+          </div>
+        </td>
+        <td class="plat-prix">5 500 FCFA</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MENU GRILLADES -->
+  <div class="section">
+    <div class="section-titre">Grillades</div>
+    <div class="separateur">— ✦ —</div>
+    <table>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Brochettes de Bœuf
+            <span class="badge">Populaire</span>
+          </div>
+          <div class="plat-desc">
+            Brochettes marinées aux épices africaines grillées au feu de bois
+          </div>
+        </td>
+        <td class="plat-prix">4 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Côtes d'Agneau Grillées</div>
+          <div class="plat-desc">
+            Côtes d'agneau tendres marinées au citron et herbes fraîches
+          </div>
+        </td>
+        <td class="plat-prix">7 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Poulet Entier Grillé
+            <span class="badge">Signature</span>
+          </div>
+          <div class="plat-desc">
+            Poulet fermier grillé aux épices camerounaises servi avec attiéké
+          </div>
+        </td>
+        <td class="plat-prix">8 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Crevettes Grillées</div>
+          <div class="plat-desc">
+            Grosses crevettes fraîches grillées à l'ail et au beurre citronné
+          </div>
+        </td>
+        <td class="plat-prix">6 500 FCFA</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MENU BOISSONS -->
+  <div class="section">
+    <div class="section-titre">Boissons</div>
+    <div class="separateur">— ✦ —</div>
+    <table>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Jus de Bissap
+            <span class="badge">Populaire</span>
+          </div>
+          <div class="plat-desc">
+            Jus de fleurs d'hibiscus frais sucré à la menthe
+          </div>
+        </td>
+        <td class="plat-prix">1 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Jus de Gingembre</div>
+          <div class="plat-desc">
+            Jus de gingembre frais pressé avec citron et miel naturel
+          </div>
+        </td>
+        <td class="plat-prix">1 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Jus de Mangue Frais</div>
+          <div class="plat-desc">
+            Mangues fraîches du Cameroun mixées sans sucre ajouté
+          </div>
+        </td>
+        <td class="plat-prix">1 200 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">
+            Cocktail Tropical
+            <span class="badge">Signature</span>
+          </div>
+          <div class="plat-desc">
+            Mélange exotique d'ananas, mangue, passion et noix de coco
+          </div>
+        </td>
+        <td class="plat-prix">2 000 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Eau Minérale</div>
+          <div class="plat-desc">
+            Eau minérale naturelle ou gazeuse
+          </div>
+        </td>
+        <td class="plat-prix">500 FCFA</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MENU DESSERTS -->
+  <div class="section">
+    <div class="section-titre">Desserts</div>
+    <div class="separateur">— ✦ —</div>
+    <table>
+      <tr>
+        <td>
+          <div class="plat-nom">Beignets au Miel</div>
+          <div class="plat-desc">
+            Beignets chauds nappés de miel local et noix de coco
+          </div>
+        </td>
+        <td class="plat-prix">1 500 FCFA</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="plat-nom">Salade de Fruits Tropicaux</div>
+          <div class="plat-desc">
+            Mangue, papaye, ananas et banane au sirop de gingembre
+          </div>
+        </td>
+        <td class="plat-prix">2 000 FCFA</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- RÉSERVATION -->
+  <div class="reservation" id="reservation">
+    <h2>Réserver une Table</h2>
+    <form onsubmit="reserver(event)">
+
+      <input
+        type="text"
+        id="nom"
+        placeholder="Votre nom complet"
+        required
+      />
+
+      <input
+        type="tel"
+        id="tel"
+        placeholder="Votre numéro de téléphone"
+        required
+      />
+
+      <input
+        type="date"
+        id="date"
+        required
+      />
+
+      <select id="personnes" required>
+        <option value="">Nombre de personnes</option>
+        <option value="1">1 personne</option>
+        <option value="2">2 personnes</option>
+        <option value="3">3 personnes</option>
+        <option value="4">4 personnes</option>
+        <option value="5">5 personnes et plus</option>
+      </select>
+
+      <button class="btn-reserver" type="submit">
+        Confirmer la Réservation
+      </button>
+
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>
+      <span>Restaurant Grefus</span> · Cuisine Africaine Raffinée
+    </p>
+    <p style="margin-top:8px">
+      📍 Douala, Cameroun &nbsp;·&nbsp;
+      📞 +237 6XX XXX XXX &nbsp;·&nbsp;
+      ✉️ contact@restaurant-grefus.com
+    </p>
+    <p style="margin-top:12px">
+      © 2026 Restaurant Grefus — Créé par
+      <span>Grefus Dev</span>
+    </p>
+  </footer>
+
+  <script>
+    function reserver(event) {
+      event.preventDefault();
+      var nom = document.getElementById("nom").value;
+      var date = document.getElementById("date").value;
+      var personnes = document.getElementById("personnes").value;
+      alert(
+        "Réservation confirmée !\n\n" +
+        "Nom : " + nom + "\n" +
+        "Date : " + date + "\n" +
+        "Personnes : " + personnes + "\n\n" +
+        "Nous vous attendons !"
+      );
+    }
+  </script>
+
+</body>
+</html>
