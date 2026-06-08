@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulaire Grefus</title>
+  <title>Grefus Dev — Portfolio</title>
   <style>
 
     * {
@@ -13,242 +13,413 @@
     }
 
     body {
-      background: #0a0a1a;
+      background-color: #0a0a0a;
+      color: white;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 30px 20px;
-      min-height: 100vh;
     }
 
-    .conteneur {
-      background: #1a1a2e;
-      border: 2px solid gold;
-      border-radius: 20px;
-      padding: 30px;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    h2 {
-      color: gold;
+    /* NAVIGATION */
+    nav {
+      background-color: #000;
+      padding: 18px 20px;
       text-align: center;
-      font-size: 22px;
-      margin-bottom: 25px;
+      border-bottom: 2px solid gold;
+      position: sticky;
+      top: 0;
     }
 
-    .champ {
-      margin-bottom: 18px;
+    nav a {
+      color: gold;
+      text-decoration: none;
+      font-size: 15px;
+      margin: 0 15px;
+      font-weight: bold;
+      text-transform: uppercase;
     }
 
-    label {
-      display: block;
-      color: #aaaaff;
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid gold;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      color: gold;
+      font-size: 36px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .hero .ligne {
+      color: gold;
+      font-size: 18px;
+      margin: 16px 0;
+    }
+
+    .disponible {
+      display: inline-block;
+      background-color: #00aa00;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    /* COMPETENCES */
+    .competences {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #0d0d0d;
+      border-bottom: 1px solid #222;
+    }
+
+    .section-titre {
+      color: gold;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .separateur {
+      color: gold;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .comp-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .comp-badge {
+      background-color: rgba(255,215,0,0.1);
+      border: 1px solid gold;
+      color: gold;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* PROJETS */
+    .projets {
+      padding: 60px 20px;
+      background-color: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    .projets-titre {
+      color: gold;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .projets-sep {
+      color: gold;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .projet-card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-left: 4px solid gold;
+      padding: 24px;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .projet-card:hover {
+      border-color: gold;
+      background-color: #1f1f1f;
+    }
+
+    .projet-titre {
+      color: gold;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .projet-desc {
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .projet-tags {
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background-color: rgba(255,215,0,0.1);
+      color: gold;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 10px;
+      margin-right: 6px;
+      text-transform: uppercase;
+    }
+
+    .btn-voir {
+      display: inline-block;
+      background-color: gold;
+      color: black;
+      padding: 10px 24px;
       font-size: 13px;
       font-weight: bold;
-      margin-bottom: 6px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    select {
+    .btn-voir:hover {
+      background-color: #e6c200;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 60px 20px;
+      background-color: #0d0d0d;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    .contact h2 {
+      color: gold;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #aaa;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .contact input,
+    .contact textarea {
+      display: block;
       width: 100%;
-      padding: 12px 15px;
-      background: #0a0a1a;
-      border: 1px solid rgba(255,215,0,0.3);
-      border-radius: 10px;
-      color: white;
-      font-size: 14px;
-      outline: none;
-      transition: border 0.3s;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="date"]:focus,
-    select:focus {
-      border-color: gold;
-    }
-
-    select option {
-      background: #1a1a2e;
-    }
-
-    .radio-groupe {
-      display: flex;
-      gap: 20px;
-      margin-top: 6px;
-    }
-
-    .radio-option {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    input[type="radio"] {
-      accent-color: gold;
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-    }
-
-    button[type="submit"] {
-      width: 100%;
+      max-width: 450px;
+      margin: 0 auto 16px;
       padding: 14px;
-      background: linear-gradient(135deg, gold, #FF8C00);
+      background-color: #1a1a1a;
+      border: 1px solid #444;
+      color: white;
+      font-size: 14px;
+      font-family: Arial;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      border-color: gold;
+      outline: none;
+    }
+
+    .contact textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-envoyer {
+      background-color: gold;
       color: black;
       border: none;
-      border-radius: 25px;
-      font-size: 16px;
+      padding: 14px 40px;
+      font-size: 15px;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       cursor: pointer;
-      margin-top: 10px;
-      transition: opacity 0.3s;
+      font-family: Arial;
     }
 
-    button[type="submit"]:hover {
-      opacity: 0.85;
+    /* FOOTER */
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 24px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #222;
     }
 
-    .erreur {
-      color: #ff6b6b;
-      font-size: 12px;
-      margin-top: 4px;
-      display: none;
+    footer span {
+      color: gold;
     }
 
   </style>
 </head>
 <body>
 
-  <div class="conteneur">
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#projets">Projets</a>
+    <a href="#competences">Compétences</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <h2>Formulaire d'inscription</h2>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="ligne">— ✦ —</div>
+    <h1>Grefus</h1>
+    <p style="color:gold;font-size:14px;letter-spacing:2px;text-transform:uppercase">
+      Développeur Web
+    </p>
+    <div class="ligne">— ✦ —</div>
+    <p>Création de sites web professionnels</p>
+    <p>Douala, Cameroun 🇨🇲</p>
+    <div class="disponible">✅ Disponible pour des projets</div>
+  </div>
 
-    <form id="monFormulaire" onsubmit="valider(event)">
+  <!-- COMPÉTENCES -->
+  <div class="competences" id="competences">
+    <div class="section-titre">Compétences</div>
+    <div class="separateur">— ✦ —</div>
+    <div class="comp-grid">
+      <div class="comp-badge">HTML</div>
+      <div class="comp-badge">CSS</div>
+      <div class="comp-badge">JavaScript</div>
+      <div class="comp-badge">Formulaires</div>
+      <div class="comp-badge">GitHub</div>
+      <div class="comp-badge">Responsive</div>
+    </div>
+  </div>
 
-      <!-- NOM -->
-      <div class="champ">
-        <label for="nom">Nom *</label>
-        <input
-          type="text"
-          id="nom"
-          name="nom"
-          placeholder="Entrez votre nom"
-          required
-        />
+  <!-- PROJETS -->
+  <div class="projets" id="projets">
+    <div class="projets-titre">Mes Projets</div>
+    <div class="projets-sep">— ✦ —</div>
+
+    <!-- PROJET 1 -->
+    <div class="projet-card">
+      <div class="projet-titre">🍽️ Menu Restaurant Africain</div>
+      <div class="projet-desc">
+        Site web professionnel pour un restaurant africain avec 5 catégories
+        de plats, formulaire de réservation et design noir et or élégant.
       </div>
-
-      <!-- PRÉNOM -->
-      <div class="champ">
-        <label for="prenom">Prénom *</label>
-        <input
-          type="text"
-          id="prenom"
-          name="prenom"
-          placeholder="Entrez votre prénom"
-          required
-        />
+      <div class="projet-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
       </div>
+      <a href="restaurant.html" class="btn-voir">Voir le projet →</a>
+    </div>
 
-      <!-- EMAIL -->
-      <div class="champ">
-        <label for="email">Email *</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="exemple@email.com"
-          required
-        />
+    <!-- PROJET 2 -->
+    <div class="projet-card">
+      <div class="projet-titre">📋 Formulaire d'Inscription</div>
+      <div class="projet-desc">
+        Formulaire d'inscription complet avec validation JavaScript,
+        sélection de pays, date de naissance et choix du sexe.
       </div>
-
-      <!-- DATE DE NAISSANCE -->
-      <div class="champ">
-        <label for="naissance">Date de naissance *</label>
-        <input
-          type="date"
-          id="naissance"
-          name="naissance"
-          required
-        />
+      <div class="projet-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
       </div>
+      <a href="formulaire.html" class="btn-voir">Voir le projet →</a>
+    </div>
 
-      <!-- PAYS -->
-      <div class="champ">
-        <label for="pays">Choisissez votre pays *</label>
-        <select id="pays" name="pays" required>
-          <option value="">-- Sélectionner --</option>
-          <option value="cameroun" selected>Cameroun</option>
-          <option value="nigeria">Nigeria</option>
-          <option value="tchad">Tchad</option>
-          <option value="togo">Togo</option>
-          <option value="ethiopie">Ethiopie</option>
-          <option value="cote_ivoire">Côte d'Ivoire</option>
-          <option value="senegal">Sénégal</option>
-        </select>
+    <!-- PROJET 3 — BIENTÔT -->
+    <div class="projet-card" style="opacity:0.5">
+      <div class="projet-titre">🔜 Prochain Projet</div>
+      <div class="projet-desc">
+        Nouveau projet en cours de développement...
       </div>
-
-      <!-- SEXE -->
-      <div class="champ">
-        <label>Sexe *</label>
-        <div class="radio-groupe">
-          <div class="radio-option">
-            <input
-              type="radio"
-              id="masculin"
-              name="sexe"
-              value="masculin"
-            />
-            <label for="masculin">Masculin</label>
-          </div>
-          <div class="radio-option">
-            <input
-              type="radio"
-              id="feminin"
-              name="sexe"
-              value="feminin"
-            />
-            <label for="feminin">Féminin</label>
-          </div>
-        </div>
+      <div class="projet-tags">
+        <span class="tag">Bientôt</span>
       </div>
-
-      <!-- BOUTON -->
-      <button type="submit">Valider l'inscription</button>
-
-    </form>
+    </div>
 
   </div>
 
+  <!-- CONTACT -->
+  <div class="contact" id="contact">
+    <h2>Me Contacter</h2>
+    <p>Tu as un projet ? Écris-moi !</p>
+    <form onsubmit="envoyer(event)">
+      <input
+        type="text"
+        id="cnom"
+        placeholder="Votre nom"
+        required
+      />
+      <input
+        type="email"
+        id="cemail"
+        placeholder="Votre email"
+        required
+      />
+      <textarea
+        id="cmessage"
+        placeholder="Décrivez votre projet..."
+        required
+      ></textarea>
+      <button class="btn-envoyer" type="submit">
+        Envoyer le message
+      </button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <span>Grefus Dev</span> · Développeur Web · Douala, Cameroun
+    </p>
+    <p style="margin-top:8px">
+      © 2026 Grefus Dev — Tous droits réservés
+    </p>
+  </footer>
+
   <script>
-    function valider(event) {
+    function envoyer(event) {
       event.preventDefault();
-
-      var nom = document.getElementById("nom").value;
-      var prenom = document.getElementById("prenom").value;
-      var email = document.getElementById("email").value;
-      var naissance = document.getElementById("naissance").value;
-      var pays = document.getElementById("pays").value;
-      var sexe = document.querySelector('input[name="sexe"]:checked');
-
-      if (!sexe) {
-        alert("Veuillez choisir votre sexe !");
-        return;
-      }
-
+      var nom = document.getElementById("cnom").value;
+      var email = document.getElementById("cemail").value;
+      var message = document.getElementById("cmessage").value;
       alert(
-        "Inscription réussie !\n\n" +
-        "Nom : " + nom + "\n" +
-        "Prénom : " + prenom + "\n" +
-        "Email : " + email + "\n" +
-        "Pays : " + pays + "\n" +
-        "Sexe : " + sexe.value
+        "Message reçu !\n\n" +
+        "De : " + nom + "\n" +
+        "Email : " + email + "\n\n" +
+        "Je vous réponds dans les plus brefs délais !"
       );
     }
   </script>
